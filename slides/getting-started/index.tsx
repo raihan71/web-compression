@@ -1781,14 +1781,7 @@ const EditorHeader = ({
   const slides = view === 'slides';
   return (
     <header
-      style={{
-        height: u(48),
-        flexShrink: 0,
-        display: 'flex',
-        alignItems: 'center',
-        padding: `0 ${u(12)}px`,
-        position: 'relative',
-      }}
+      style={{ height: u(48), flexShrink: 0, display: 'flex', alignItems: 'center', padding: `0 ${u(12)}px`, position: 'relative', translate: '-19.19px 0px' }}
     >
       <div style={{ display: 'flex', alignItems: 'center', gap: u(8) }}>
         <GhostIcon name="chevron-left" size={16} />

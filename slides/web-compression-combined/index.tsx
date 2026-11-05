@@ -1,6 +1,7 @@
 import type { CSSProperties, ReactNode } from 'react';
 import type { DesignSystem, Page, SlideMeta, SlideTransition } from '@open-slide/core';
 import { Step, Steps, useIsActivePage, useSlidePageNumber } from '@open-slide/core';
+import portrait from './assets/me-potrait-new.png';
 
 export const design: DesignSystem = {
   palette: { bg: '#0a0f0c', text: '#e9f5ec', accent: '#7cffa0' },
@@ -531,6 +532,100 @@ const Cover: Page = () => (
   </div>
 );
 Cover.transition = settle;
+
+const Introduction: Page = () => (
+  <div
+    style={{
+      ...fill,
+      background: 'var(--osd-bg)',
+      color: 'var(--osd-text)',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      padding: '70px 120px 60px',
+    }}
+  >
+    <div style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 72 }}>
+      <div style={{ width: 510, flexShrink: 0 }}>
+        <div
+          style={{
+            width: 300,
+            height: 300,
+            borderRadius: '50%',
+            border: '2px solid var(--osd-accent)',
+            padding: 10,
+            marginBottom: 28,
+          }}
+        >
+          <img
+            src={portrait}
+            alt="Raihan Nismara"
+            style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }}
+          />
+        </div>
+        <h2
+          style={{
+            fontFamily: 'var(--osd-font-display)',
+            fontSize: 56,
+            fontWeight: 900,
+            lineHeight: 1.05,
+            margin: 0,
+          }}
+        >
+          Raihan Nismara
+        </h2>
+        <p style={{ fontSize: 28, color: muted, margin: '16px 0 0', lineHeight: 1.4 }}>
+          Frontend Engineer · d3labs.io
+        </p>
+      </div>
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 28 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '260px 1fr', gap: 22, alignItems: 'start' }}>
+          <span style={{ fontSize: 28, fontWeight: 800 }}>Nationality</span>
+          <span style={{ fontSize: 30, color: muted }}>Indonesia 🇮🇩</span>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: '260px 1fr', gap: 22, alignItems: 'start' }}>
+          <span style={{ fontSize: 28, fontWeight: 800 }}>Recent Works</span>
+          <div style={{ fontSize: 28, color: muted, lineHeight: 1.55 }}>
+            <div>- Frontend Dev · Telkom Indonesia</div>
+            <div>- Frontend Dev · Belanjaqu</div>
+          </div>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: '260px 1fr', gap: 22, alignItems: 'start' }}>
+          <span style={{ fontSize: 28, fontWeight: 800 }}>Past Talks</span>
+          <div style={{ fontSize: 28, color: muted, lineHeight: 1.55 }}>
+            <div>- Fork It Community &lsquo;25</div>
+            <div>- JS Poland &lsquo;24</div>
+            <div>- CityJS Singapore &lsquo;24</div>
+            <div>- iJS Singapore &lsquo;23–&lsquo;24</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={{
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        gap: 34,
+        marginTop: 42,
+        paddingTop: 22,
+        borderTop: `1px solid ${border}`,
+        fontFamily: mono,
+        fontSize: 22,
+        color: muted,
+      }}
+    >
+      <span>◉ raihan.my.id</span>
+      <span style={{ color: 'var(--osd-accent)' }}>in</span>
+      <span>Raihan Nismara</span>
+      <span style={{ color: '#ff5d5d' }}>▶</span>
+      <span>codevcast</span>
+      <span style={{ color: '#ff8ac2' }}>◎</span>
+      <span>raihan.nismara</span>
+    </div>
+  </div>
+);
+Introduction.transition = settle;
 
 const Agenda: Page = () => (
   <PageShell label="Running order">
@@ -1091,6 +1186,7 @@ export const meta: SlideMeta = {
 
 export default [
   Cover,
+  Introduction,
   Agenda,
   SectionOne,
   Lz77,
