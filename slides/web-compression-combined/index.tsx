@@ -2,6 +2,7 @@ import type { CSSProperties, ReactNode } from 'react';
 import type { DesignSystem, Page, SlideMeta, SlideTransition } from '@open-slide/core';
 import { Step, Steps, useIsActivePage, useSlidePageNumber } from '@open-slide/core';
 import portrait from './assets/me-potrait-new.png';
+import nounyiqCover from './assets/nounyiq-cover.png';
 
 export const design: DesignSystem = {
   palette: { bg: '#0a0f0c', text: '#e9f5ec', accent: '#7cffa0' },
@@ -627,6 +628,36 @@ const Introduction: Page = () => (
 );
 Introduction.transition = settle;
 
+const NounyIQ: Page = () => (
+  <PageShell label="Also building">
+    <div style={{ display: 'grid', gridTemplateColumns: '600px 1000px', gap: 80, alignItems: 'center', marginTop: 16 }}>
+      <div>
+        <p style={{ fontFamily: mono, fontSize: 26, color: muted, margin: '0 0 24px' }}>A product I’m building</p>
+        <h2 style={{ ...headingStyle, fontSize: 100 }}>NounyIQ</h2>
+        <p style={{ fontSize: 42, lineHeight: 1.4, margin: '32px 0', maxWidth: 560 }}>
+          Train your brain.<br />One quest a day.
+        </p>
+        <p style={{ fontSize: 32, lineHeight: 1.5, color: muted, margin: '0 0 48px', maxWidth: 540 }}>
+          Short challenges in patterns, memory, and logic.
+        </p>
+        <a
+          href="https://nounyiq.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ display: 'inline-block', padding: '22px 28px', borderRadius: 'var(--osd-radius)', background: 'var(--osd-accent)', color: 'var(--osd-bg)', fontSize: 32, fontWeight: 750, textDecoration: 'none' }}
+        >
+          Try nounyiq.com ↗
+        </a>
+      </div>
+      <img
+        src={nounyiqCover}
+        alt="NounyIQ: daily brain-training quests, XP rewards, and leagues"
+        style={{ display: 'block', width: 1000, height: 750, objectFit: 'contain', borderRadius: 'var(--osd-radius)' }}
+      />
+    </div>
+  </PageShell>
+);
+
 const Agenda: Page = () => (
   <PageShell label="Running order">
     <h2 style={headingStyle}>Where we&rsquo;re headed</h2>
@@ -1187,6 +1218,7 @@ export const meta: SlideMeta = {
 export default [
   Cover,
   Introduction,
+  NounyIQ,
   Agenda,
   SectionOne,
   Lz77,
